@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
-import { newItemAdded } from '../cart/cartSlice'
+import { newItemAdded } from '../itemList/itemListSlice'
 
 export const AddNewItem = () => {
   const [name, setName] = useState('')
