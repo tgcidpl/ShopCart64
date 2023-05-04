@@ -1,13 +1,13 @@
 import './App.css'
-import { AddNewItem } from './features/addToItemList/AddNewItem'
+import { AddToItemList } from './features/addToItemList/AddToItemList'
 import { Cart } from './features/cart/cart'
-import {ItemList} from './features/itemList/itemList'
+import {ItemList} from './features/itemList/ItemList'
 
 function App() {
   return (
     <>
-    <ItemList/>
-      <AddNewItem/>
+      <ItemList/>
+      <AddToItemList/>
       <Cart />
     </>
   )

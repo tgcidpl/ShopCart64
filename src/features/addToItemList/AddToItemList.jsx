@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 import { newItemAdded } from '../itemList/itemListSlice'
 
-export const AddNewItem = () => {
+export const AddToItemList = () => {
   const [name, setName] = useState('')
   const [price, setPrice] = useState('')
   const [quantity, setQuantity] = useState('')
@@ -15,7 +15,7 @@ export const AddNewItem = () => {
   const onNameChanged = e => setName(e.target.value)
   const onPriceChanged = e => setPrice(parseFloat(e.target.value))
   const onQuantityChanged = e => setQuantity(parseInt(e.target.value))
-  const onAddNewItemClicked = () => {
+  const onAddToItemListClicked = () => {
     if (typeof name === 'string' && price && Number.isInteger(quantity)) {
       dispatch(
         newItemAdded({
@@ -62,7 +62,7 @@ export const AddNewItem = () => {
           value={quantity}
           onChange={onQuantityChanged}
         />
-        <button type="button" onClick={onAddNewItemClicked}>Add New Item</button>
+        <button type="button" onClick={onAddToItemListClicked}>Add New Item</button>
       </form>
     </section>
   )
