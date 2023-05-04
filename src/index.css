@@ -67,3 +67,15 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.cart-print_area {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart-item {
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #747bff;
+  border-radius: 10px;
+  text-align: left;
+}
