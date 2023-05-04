@@ -9,10 +9,6 @@ export const itemListSlice = createSlice({
     newItemAdded(state, action) {
   state.push(action.payload)
 }
-
-    // itemRemoved: (state, action) => {
-    //   const itemToRemove = state.find(item => item.id === action.payload)
-    //   state.filter(itemToRemove)
   }
 })
 
