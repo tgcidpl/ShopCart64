@@ -1,16 +1,23 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { incrementedQuantity, decrementedQuantity, removedFromCart } from './cartSlice'
 
 export const Cart = () => {
   const cart = useSelector(state => state.cart)
+  const dispatch = useDispatch();
 
   const renderedItemList = cart.map(item => (
-    <article className="itemList-item" key={item.id}>
+    <div className="itemList-item" key={item.id}>
       <span>Item ID: {item.id}</span>
       <h3>name: {item.name}</h3>
       <p>price: {item.price}</p>
       <p>quantity: {item.quantity}</p>
-    </article>
+      <button 
+  onClick={() => 
+    dispatch(removedFromCart(item.id))
+  }>Remove From Cart
+</button>
+    </div>
   ))
 
   return (

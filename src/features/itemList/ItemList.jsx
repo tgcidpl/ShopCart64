@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { addedToCart } from '../cart/cartSlice'
+import { addedToCart  } from '../cart/cartSlice'
 
 export const ItemList = () => {
   const itemList = useSelector(state => state.itemList)
@@ -15,7 +15,7 @@ export const ItemList = () => {
       <button 
   onClick={() => 
     dispatch(addedToCart({
-      id: item.id, name:item.name, price: item.price, quantity: 1
+      id: item.id, name:item.name, price: item.price
     }))
   }>Add to Cart
 </button>
