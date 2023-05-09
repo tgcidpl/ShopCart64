@@ -1,8 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { addedToCart } from '../cart/cartSlice'
 
 export const ItemList = () => {
   const itemList = useSelector(state => state.itemList)
+  const dispatch = useDispatch()
 
   const renderedItemList = itemList.map(item => (
     <article className="itemList-item" key={item.id}>
@@ -10,6 +12,13 @@ export const ItemList = () => {
       <h3>name: {item.name}</h3>
       <p>price: {item.price}</p>
       <p>quantity: {item.quantity}</p>
+      <button 
+  onClick={() => 
+    dispatch(addedToCart({
+      id: item.id, name:item.name, price: item.price, quantity: 1
+    }))
+  }>Add to Cart
+</button>
     </article>
   ))
 
