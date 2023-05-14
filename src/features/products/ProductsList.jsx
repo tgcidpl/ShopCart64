@@ -1,11 +1,13 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addedToCart } from "../cart/cartSlice";
+import { Products } from "./Products";
 
-export const ItemList = () => {
-  const itemList = useSelector((state) => state.itemList);
+export const ProductsList = () => {
   const dispatch = useDispatch();
 
+  console.log(Products());
+  const itemList = [];
   const renderedItemList = itemList.map((item) => (
     <article className="itemList-item" key={item.id}>
       <p>Item ID: {item.id}</p>
@@ -30,7 +32,7 @@ export const ItemList = () => {
 
   return (
     <section className="itemList-print">
-      <h2>Items:</h2>
+      <h2>Products:</h2>
       <div className="itemList-print_area">{renderedItemList}</div>
     </section>
   );
