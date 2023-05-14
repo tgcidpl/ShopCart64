@@ -6,12 +6,22 @@ export const Cart = () => {
   const cart = useSelector(state => state.cart)
   const dispatch = useDispatch();
 
+// function getMaxQuantity(id) {
+//   const inventoryItem = inventory.find(item => item.id === id);
+//   const maxQuantity = inventoryItem ? inventoryItem.quantity : 0;
+//   return maxQuantity > 0 ? maxQuantity : 0;
+// }
+
   const renderedItemList = cart.map(item => (
     <div className="itemList-item" key={item.id}>
       <span>Item ID: {item.id}</span>
       <h3>name: {item.name}</h3>
-      <p>price: {item.price}</p>
-      <p>quantity: {item.quantity}</p>
+      <strong>price: ${item.price}</strong>
+      <div className='itemList-item__incrDec'>
+          <button onClick={() => dispatch(decrementedQuantity(item.id))}>-</button>
+          <p>Quantity: {item.quantity}</p>
+          <button onClick={() => dispatch(incrementedQuantity(item.id))}>+</button>
+        </div>
       <button 
   onClick={() => 
     dispatch(removedFromCart(item.id))

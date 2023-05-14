@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import { AddToItemList } from './features/addToItemList/AddToItemList'
 import { Cart } from './features/cart/cart'
 import {ItemList} from './features/itemList/ItemList'
