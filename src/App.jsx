@@ -7,7 +7,8 @@ function App() {
   return (
     <>
       <ItemList />
-      <AddToItemList />
+      {/* below component is only used to temporarily add new items to ItemList */}
+      {/* <AddToItemList /> */}
       <Cart />
     </>
   );

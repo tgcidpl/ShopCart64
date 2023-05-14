@@ -5,6 +5,7 @@ import {
   decrementedQuantity,
   removedFromCart,
 } from "./cartSlice";
+import { Total } from "../total/Total";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart);
@@ -20,9 +21,9 @@ export const Cart = () => {
 
   const renderedItemList = cart.map((item) => (
     <div className="itemList-item" key={item.id}>
-      <span>Item ID: {item.id}</span>
-      <h3>name: {item.name}</h3>
-      <strong>price: ${item.price}</strong>
+      <p>Item ID: {item.id}</p>
+      <h4>Product name: {item.name}</h4>
+      <strong>Price: ${item.price}</strong>
       <div className="itemList-item__incrDec">
         <button
           onClick={() => dispatch(decrementedQuantity(item.id))}
@@ -50,9 +51,9 @@ export const Cart = () => {
 
   return (
     <section className="itemList-print">
-      <h2>cart items:</h2>
+      <h2>Your Cart:</h2>
       <div className="itemList-print_area">{renderedItemList}</div>
-      <button onClick={() => console.log(cart)}>Log cart </button>
+      <Total />
     </section>
   );
 };
