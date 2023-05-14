@@ -79,6 +79,11 @@ button:focus-visible {
   border: 1px solid #747bff;
   border-radius: 10px;
   text-align: left;
+  &__image {
+    width: 16rem;
+    height: 16rem;
+    object-fit: cover;
+  }
   &__incrDec {
     display: flex;
     gap: 0.6em;

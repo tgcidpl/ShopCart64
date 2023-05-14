@@ -1,17 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addedToCart } from "../cart/cartSlice";
 import { Products } from "./Products";
 
 export const ProductsList = () => {
+  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [renderedItemList, setRenderedItemList] = useState(null);
+
+  // function checkCart(id) {
+  //   const cartItem = cart.find((item) => item.id === id);
+  //   const inCart = cartItem ? true : false;
+  //   console.log(inCart);
+  //   return inCart;
+  // }
 
   useEffect(() => {
     Products().then((productsArray) => {
       const itemList = productsArray.map((item) => (
         <article className="itemList-item" key={item.id}>
-          <p>Item ID: {item.id}</p>
+          <img
+            className="itemList-item__image"
+            src={item.image}
+            alt="item-photo"
+          />
           <h4>Product name: {item.name}</h4>
           <p>Price: ${item.price}</p>
           <p>Quantity: {item.quantity}</p>
@@ -26,6 +38,7 @@ export const ProductsList = () => {
                 })
               )
             }
+            // disabled={checkCart(item.id)}
           >
             Add to Cart
           </button>
