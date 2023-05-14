@@ -22,7 +22,6 @@ export const ProductsList = () => {
                   id: item.id,
                   name: item.name,
                   price: item.price,
-                  quantity: 1,
                   maxQuantity: item.quantity,
                 })
               )
