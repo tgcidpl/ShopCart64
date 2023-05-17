@@ -10,7 +10,21 @@ export const ProductsList = () => {
 
   const checkItemsInCart = (itemId, itemMaxQuantity) => {
     return cart.some(
-      (item) => item.id === itemId && item.quantity === itemMaxQuantity
+      (item) => item.id === itemId && item.quantity >= itemMaxQuantity
+    );
+  };
+
+  // TODO  add isLoading state to lock Add to Cart button while store is updating
+
+  const handleAddToCart = (id, name, price, maxQuantity) => {
+    console.log(id, name, price, maxQuantity);
+    dispatch(
+      addedToCart({
+        id,
+        name,
+        price,
+        maxQuantity,
+      })
     );
   };
 
@@ -29,14 +43,7 @@ export const ProductsList = () => {
           <p>Quantity: {item.quantity}</p>
           <button
             onClick={() =>
-              dispatch(
-                addedToCart({
-                  id: item.id,
-                  name: item.name,
-                  price: item.price,
-                  maxQuantity: item.quantity,
-                })
-              )
+              handleAddToCart(item.id, item.name, item.price, item.quantity)
             }
             disabled={checkItemsInCart(item.id, item.quantity)}
           >
