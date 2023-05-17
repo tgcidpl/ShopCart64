@@ -8,12 +8,11 @@ export const ProductsList = () => {
   const dispatch = useDispatch();
   const [renderedItemList, setRenderedItemList] = useState(null);
 
-  // function checkCart(id) {
-  //   const cartItem = cart.find((item) => item.id === id);
-  //   const inCart = cartItem ? true : false;
-  //   console.log(inCart);
-  //   return inCart;
-  // }
+  const checkItemsInCart = (itemId, itemMaxQuantity) => {
+    return cart.some(
+      (item) => item.id === itemId && item.quantity === itemMaxQuantity
+    );
+  };
 
   useEffect(() => {
     Products().then((productsArray) => {
@@ -39,7 +38,7 @@ export const ProductsList = () => {
                 })
               )
             }
-            // disabled={checkCart(item.id)}
+            disabled={checkItemsInCart(item.id, item.quantity)}
           >
             Add to Cart
           </button>
@@ -47,7 +46,7 @@ export const ProductsList = () => {
       ));
       setRenderedItemList(itemList);
     });
-  }, [dispatch]);
+  }, [dispatch, cart]);
 
   if (!renderedItemList) {
     return <div>Loading...</div>;
