@@ -1,4 +1,3 @@
-import "./App.scss";
 import { Cart } from "./features/cart/cart";
 import { ProductsList } from "./features/products/ProductsList";
 
