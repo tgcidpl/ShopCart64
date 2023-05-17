@@ -55,7 +55,7 @@ export const ProductsList = () => {
   return (
     <section className="itemList-print">
       <h2>Products:</h2>
-      <div className="itemList-print_area">{renderedItemList}</div>
+      <div className="itemList-print__area">{renderedItemList}</div>
     </section>
   );
 };
