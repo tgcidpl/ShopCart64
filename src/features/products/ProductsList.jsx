@@ -16,6 +16,7 @@ export const ProductsList = () => {
   };
 
   const handleAddToCart = async (id, name, price, maxQuantity) => {
+    if (isLoading) return;
     setIsLoading(true);
     await dispatch(
       addedToCart({
@@ -45,7 +46,7 @@ export const ProductsList = () => {
             onClick={() =>
               handleAddToCart(item.id, item.name, item.price, item.quantity)
             }
-            disabled={checkItemsInCart(item.id, item.quantity) || isLoading}
+            disabled={isLoading || checkItemsInCart(item.id, item.quantity)}
           >
             {isLoading ? "Adding..." : "Add to Cart"}
           </button>
