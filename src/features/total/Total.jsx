@@ -15,10 +15,10 @@ export function Total() {
     return { totalPrice, totalQuantity };
   };
   return (
-    <div>
-      <h4>Order Summary</h4>
+    <section className="total">
+      <h4>Order Summary:</h4>
       <span>total ({getTotal().totalQuantity} items): </span>
       <strong>${getTotal().totalPrice.toFixed(2)}</strong>
-    </div>
+    </section>
   );
 }

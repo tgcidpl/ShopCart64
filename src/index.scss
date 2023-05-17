@@ -85,13 +85,32 @@ button:focus-visible {
     height: 16rem;
     object-fit: cover;
   }
-  &__incrDec {
-    display: flex;
-    gap: 0.6em;
-  }
 }
 
 .cart {
+  position: absolute;
+  background-color: #747bff;
+  top: 5rem;
+  right: 0;
+  padding: 0.6rem;
+  &-text {
+    color: #ffffff;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+  &-list {
+    flex-direction: column;
+    &-item {
+      background-color: #ffffff;
+      margin: 0.4rem 0;
+      padding: 0.4rem;
+      border-radius: 10px;
+      &__incrDec {
+        display: flex;
+        gap: 0.6em;
+      }
+    }
+  }
   &-modal {
     border: 1px solid #747bff;
     border-radius: 10px;
@@ -107,6 +126,7 @@ button:focus-visible {
   justify-content: space-between;
   align-items: center;
   color: #f9f9f9;
+  height: 5rem;
 
   &-logo {
     font-size: 3rem;
@@ -125,4 +145,10 @@ button:focus-visible {
       height: 2em;
     }
   }
+}
+
+.total {
+  color: #ffffff;
+  line-height: 0.8rem;
+  margin-bottom: 0.6rem;
 }

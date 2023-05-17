@@ -20,11 +20,10 @@ export const Cart = () => {
   }
 
   const renderedCartItemList = cart.map((item) => (
-    <div className="itemList-item" key={item.id}>
-      {/* <p>Item ID: {item.id}</p> */}
+    <div className="cart-list-item" key={item.id}>
       <h4>{item.name}</h4>
       <strong>${item.price}</strong>
-      <div className="itemList-item__incrDec">
+      <div className="cart-list-item__incrDec">
         <button
           onClick={() => dispatch(decrementedQuantity(item.id))}
           disabled={item.quantity === 1}
@@ -50,9 +49,9 @@ export const Cart = () => {
   ));
 
   return (
-    <section className="itemList-print">
-      <h2>Your Cart:</h2>
-      <div className="itemList-print__area">{renderedCartItemList}</div>
+    <section className="cart">
+      <h3 className="cart-text">Your Cart:</h3>
+      <div className="cart-list">{renderedCartItemList}</div>
       <Total />
       <button onClick={() => checkoutModal.showModal()}>
         Proceed to Checkout
