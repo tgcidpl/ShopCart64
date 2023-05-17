@@ -7,6 +7,7 @@ export const ProductsList = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [renderedItemList, setRenderedItemList] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const checkItemsInCart = (itemId, itemMaxQuantity) => {
     return cart.some(
@@ -14,11 +15,9 @@ export const ProductsList = () => {
     );
   };
 
-  // TODO  add isLoading state to lock Add to Cart button while store is updating
-
-  const handleAddToCart = (id, name, price, maxQuantity) => {
-    console.log(id, name, price, maxQuantity);
-    dispatch(
+  const handleAddToCart = async (id, name, price, maxQuantity) => {
+    setIsLoading(true);
+    await dispatch(
       addedToCart({
         id,
         name,
@@ -26,6 +25,7 @@ export const ProductsList = () => {
         maxQuantity,
       })
     );
+    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -45,18 +45,18 @@ export const ProductsList = () => {
             onClick={() =>
               handleAddToCart(item.id, item.name, item.price, item.quantity)
             }
-            disabled={checkItemsInCart(item.id, item.quantity)}
+            disabled={checkItemsInCart(item.id, item.quantity || isLoading)}
           >
-            Add to Cart
+            {isLoading ? "Adding..." : "Add to Cart"}
           </button>
         </article>
       ));
       setRenderedItemList(itemList);
     });
-  }, [dispatch, cart]);
+  }, [dispatch, cart, isLoading]);
 
   if (!renderedItemList) {
-    return <div>Loading...</div>;
+    return <div>Loading products...</div>;
   }
 
   return (
