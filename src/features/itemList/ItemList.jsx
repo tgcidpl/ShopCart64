@@ -31,7 +31,7 @@ export const ItemList = () => {
   return (
     <section className="itemList-print">
       <h2>Items:</h2>
-      <div className="itemList-print_area">{renderedItemList}</div>
+      <div className="itemList-print__area">{renderedItemList}</div>
     </section>
   );
 };

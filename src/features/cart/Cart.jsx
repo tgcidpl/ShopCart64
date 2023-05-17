@@ -52,7 +52,7 @@ export const Cart = () => {
   return (
     <section className="itemList-print">
       <h2>Your Cart:</h2>
-      <div className="itemList-print_area">{renderedCartItemList}</div>
+      <div className="itemList-print__area">{renderedCartItemList}</div>
       <Total />
       <button onClick={() => checkoutModal.showModal()}>
         Proceed to Checkout
