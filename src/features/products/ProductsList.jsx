@@ -61,8 +61,7 @@ export const ProductsList = () => {
   }
 
   return (
-    <section className="itemList-print">
-      <h2>Products:</h2>
+    <section className="itemList-print container">
       <div className="itemList-print__area">{renderedItemList}</div>
     </section>
   );

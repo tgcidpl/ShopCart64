@@ -12,13 +12,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -37,7 +37,7 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  margin-top: 0.6em;
+  margin: 0.4rem 0;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
@@ -65,6 +65,10 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
 .itemList-print__area {
   display: flex;
   flex-wrap: wrap;
@@ -91,5 +95,34 @@ button:focus-visible {
   &-modal {
     border: 1px solid #747bff;
     border-radius: 10px;
+  }
+}
+
+.navbackground {
+  background-color: #747bff;
+  width: 100%;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #f9f9f9;
+
+  &-logo {
+    font-size: 3rem;
+    font-weight: 500;
+    padding: 0.5rem;
+  }
+  &-cartButton {
+    border-radius: 50px;
+    height: 4rem;
+    width: 4rem;
+    margin: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__icon {
+      height: 2em;
+    }
   }
 }
