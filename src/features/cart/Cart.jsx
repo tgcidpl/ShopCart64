@@ -9,7 +9,7 @@ import { Total } from "../total/Total";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart);
-  // const itemList = useSelector((state) => state.itemList);
+  const isOpen = useSelector((state) => state.navbar.toggleCartOpen);
 
   const dispatch = useDispatch();
 
@@ -49,7 +49,7 @@ export const Cart = () => {
   ));
 
   return (
-    <section className="cart">
+    <section className={`cart ${isOpen ? "open" : ""}`}>
       <h3 className="cart-text">Your Cart:</h3>
       <div className="cart-list">{renderedCartItemList}</div>
       <Total />

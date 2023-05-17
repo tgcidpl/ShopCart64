@@ -86,13 +86,16 @@ button:focus-visible {
     object-fit: cover;
   }
 }
-
+// position fuxed hides overflow of cart, TO FIX
+// TO DO add ::after element for icon to show total no of items
 .cart {
-  position: absolute;
+  position: fixed;
   background-color: #747bff;
   top: 5rem;
-  right: 0;
+  right: -100%;
+  width: 15rem;
   padding: 0.6rem;
+  transition: right 0.3s ease;
   &-text {
     color: #ffffff;
     font-size: 1.6rem;
@@ -115,6 +118,10 @@ button:focus-visible {
     border: 1px solid #747bff;
     border-radius: 10px;
   }
+}
+
+.cart.open {
+  right: 0;
 }
 
 .navbackground {
