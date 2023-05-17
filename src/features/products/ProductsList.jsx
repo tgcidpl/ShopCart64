@@ -45,7 +45,7 @@ export const ProductsList = () => {
             onClick={() =>
               handleAddToCart(item.id, item.name, item.price, item.quantity)
             }
-            disabled={checkItemsInCart(item.id, item.quantity || isLoading)}
+            disabled={checkItemsInCart(item.id, item.quantity) || isLoading}
           >
             {isLoading ? "Adding..." : "Add to Cart"}
           </button>
