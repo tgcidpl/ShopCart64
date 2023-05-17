@@ -21,9 +21,9 @@ export const Cart = () => {
 
   const renderedCartItemList = cart.map((item) => (
     <div className="itemList-item" key={item.id}>
-      <p>Item ID: {item.id}</p>
-      <h4>Product name: {item.name}</h4>
-      <strong>Price: ${item.price}</strong>
+      {/* <p>Item ID: {item.id}</p> */}
+      <h4>{item.name}</h4>
+      <strong>${item.price}</strong>
       <div className="itemList-item__incrDec">
         <button
           onClick={() => dispatch(decrementedQuantity(item.id))}
@@ -31,7 +31,7 @@ export const Cart = () => {
         >
           -
         </button>
-        <p>Quantity: {item.quantity}</p>
+        <p>No: {item.quantity}</p>
         <button
           onClick={() =>
             item.quantity < getMaxQuantity(item.id)
@@ -54,6 +54,13 @@ export const Cart = () => {
       <h2>Your Cart:</h2>
       <div className="itemList-print_area">{renderedCartItemList}</div>
       <Total />
+      <button onClick={() => checkoutModal.showModal()}>
+        Proceed to Checkout
+      </button>
+      <dialog className="cart-modal" id="checkoutModal">
+        <h3>Thank you for testing out the shopping cart project!</h3>
+        <button onClick={() => checkoutModal.close()}>Close</button>
+      </dialog>
     </section>
   );
 };

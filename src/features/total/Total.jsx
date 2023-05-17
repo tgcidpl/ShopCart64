@@ -18,7 +18,7 @@ export function Total() {
     <div>
       <h4>Order Summary</h4>
       <span>total ({getTotal().totalQuantity} items): </span>
-      <strong>${getTotal().totalPrice}</strong>
+      <strong>${getTotal().totalPrice.toFixed(2)}</strong>
     </div>
   );
 }

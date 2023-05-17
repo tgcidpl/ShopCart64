@@ -24,6 +24,7 @@ export function Products() {
       const productsArray = products.map((product) => ({
         id: product[0],
         name: product[1].name,
+        brand: product[1].brand,
         price: product[1].price,
         quantity: product[1].quantity,
         image: product[1].image,

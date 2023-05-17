@@ -89,3 +89,10 @@ button:focus-visible {
     gap: 0.6em;
   }
 }
+
+.cart {
+  &-modal {
+    border: 1px solid #747bff;
+    border-radius: 10px;
+  }
+}
