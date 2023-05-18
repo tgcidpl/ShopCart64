@@ -6,3 +6,4 @@ Technologies: Vite, React, Redux toolkit.
 
 Test dev build: npm run dev.
 
+Website: https://shopcart64.netlify.app/
