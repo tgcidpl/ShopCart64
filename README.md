@@ -1,5 +1,7 @@
 Shopcart64
-Shopping cart project using Readux.
+
+A simple shopping cart project using Redux.
+
 Technologies: Vite, React, Redux toolkit.
 
 Test dev build: npm run dev.
