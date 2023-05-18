@@ -143,6 +143,7 @@ button:focus-visible {
     padding: 0.5rem;
   }
   &-cartButton {
+    position: relative;
     border-radius: 50px;
     height: 4rem;
     width: 4rem;
@@ -150,6 +151,21 @@ button:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
+    &::after {
+      content: attr(in-cart-quantity);
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 1.4rem;
+      height: 1.4rem;
+      padding: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+    }
     &__icon {
       height: 2em;
     }

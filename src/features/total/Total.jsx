@@ -1,24 +1,12 @@
-import { useSelector } from "react-redux";
+import { getTotalInStore } from "./getTotal";
 
 export function Total() {
-  const cart = useSelector((state) => state.cart);
-
-  const getTotal = () => {
-    let totalQuantity = 0;
-    let totalPrice = 0;
-
-    cart.forEach((item) => {
-      totalQuantity += item.quantity;
-      totalPrice += item.price * item.quantity;
-    });
-
-    return { totalPrice, totalQuantity };
-  };
+  getTotalInStore;
   return (
     <section className="total">
       <h4>Order Summary:</h4>
-      <span>total ({getTotal().totalQuantity} items): </span>
-      <strong>${getTotal().totalPrice.toFixed(2)}</strong>
+      <span>total ({getTotalInStore().totalQuantity} items): </span>
+      <strong>${getTotalInStore().totalPrice.toFixed(2)}</strong>
     </section>
   );
 }
