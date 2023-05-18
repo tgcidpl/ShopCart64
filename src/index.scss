@@ -1,11 +1,10 @@
+$color-primary: #84a9ff;
+$color-secondary: #def2ff;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,9 +13,6 @@
   -webkit-text-size-adjust: 100%;
   margin: 0 auto;
 }
-
-$color-primary: #84a9ff;
-$color-secondary: #def2ff;
 
 body {
   margin: 0;
@@ -36,7 +32,6 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -48,18 +43,6 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: $color-primary;
-  }
-  button {
-    background-color: $color-secondary;
-  }
-}
 .container {
   max-width: 1280px;
   margin: 0 auto;
