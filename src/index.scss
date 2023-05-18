@@ -15,7 +15,7 @@
   margin: 0 auto;
 }
 
-$color-primary: #77a0ff;
+$color-primary: #84a9ff;
 $color-secondary: #def2ff;
 
 body {
@@ -92,6 +92,7 @@ button:focus-visible {
   transition: right 0.5s ease;
   max-height: calc(100vh - 6rem);
   overflow-y: auto;
+  border-radius: 0 0 0 10px;
   &-text {
     color: #ffffff;
     font-size: 1.6rem;
