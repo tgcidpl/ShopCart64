@@ -1,6 +1,6 @@
 Shopcart64
 
-A simple shopping cart project using Redux.
+A simple shopping cart project using Redux-toolkit.
 
 Products are retrieved from Firebase Realtime Database. 
 
