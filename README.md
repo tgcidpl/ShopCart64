@@ -2,7 +2,9 @@ Shopcart64
 
 A simple shopping cart project using Redux.
 
-Technologies: Vite, React, Redux toolkit.
+Products are retrieved from Firebase Realtime Database. 
+
+Technologies: Vite, React, Redux toolkit, Firebase.
 
 Test dev build: npm run dev.
 
