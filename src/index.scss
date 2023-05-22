@@ -132,8 +132,7 @@ button:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    &::after {
-      content: attr(in-cart-quantity);
+    &__counter {
       position: absolute;
       top: 2rem;
       right: 2rem;

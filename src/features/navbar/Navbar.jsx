@@ -16,11 +16,12 @@ export function Navbar() {
     <div className="navbackground">
       <nav className="navbar container">
         <div className="navbar-logo">ShopCart 64</div>
-        <button
-          in-cart-quantity={totalQuantityInCart}
-          onClick={handleToggleCart}
-          className={`navbar-cartButton show-quantity`}
-        >
+        <button onClick={handleToggleCart} className={`navbar-cartButton`}>
+          {totalQuantityInCart > 0 ? (
+            <span className="navbar-cartButton__counter">
+              {totalQuantityInCart}
+            </span>
+          ) : null}
           <img src={cartIcon} className="navbar-cartButton__icon" />
         </button>
       </nav>
