@@ -7,7 +7,6 @@ export const ProductsList = () => {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [renderedItemList, setRenderedItemList] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
   const checkItemsInCart = (itemId, itemMaxQuantity) => {
     return cart.some(
@@ -15,10 +14,8 @@ export const ProductsList = () => {
     );
   };
 
-  const handleAddToCart = async (id, name, price, maxQuantity) => {
-    if (isLoading) return;
-    setIsLoading(true);
-    await dispatch(
+  const handleAddToCart = (id, name, price, maxQuantity) => {
+    dispatch(
       addedToCart({
         id,
         name,
@@ -26,7 +23,6 @@ export const ProductsList = () => {
         maxQuantity,
       })
     );
-    setIsLoading(false);
   };
 
   useEffect(() => {
@@ -46,15 +42,15 @@ export const ProductsList = () => {
             onClick={() =>
               handleAddToCart(item.id, item.name, item.price, item.quantity)
             }
-            disabled={isLoading || checkItemsInCart(item.id, item.quantity)}
+            disabled={checkItemsInCart(item.id, item.quantity)}
           >
-            {isLoading ? "Adding..." : "Add to Cart"}
+            Add to Cart
           </button>
         </article>
       ));
       setRenderedItemList(itemList);
     });
-  }, [dispatch, cart, isLoading]);
+  }, [dispatch, cart]);
 
   if (!renderedItemList) {
     return <div>Loading products...</div>;
