@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addedToCart } from "../cart/cartSlice";
-import { Products } from "./Products";
+import { getProducts } from "../../services/getProducts";
 
 export const ProductsList = () => {
   const cart = useSelector((state) => state.cart);
@@ -26,7 +26,7 @@ export const ProductsList = () => {
   };
 
   useEffect(() => {
-    Products().then((productsArray) => {
+    getProducts().then((productsArray) => {
       const itemList = productsArray.map((item) => (
         <article className="itemList-item" key={item.id}>
           <img
@@ -37,7 +37,7 @@ export const ProductsList = () => {
           <h4>Product name: {item.name}</h4>
           <h4>Brand: {item.brand}</h4>
           <p>Price: ${item.price}</p>
-          <p>Quantity: {item.quantity}</p>
+          <p>In Stock: {item.quantity}</p>
           <button
             onClick={() =>
               handleAddToCart(item.id, item.name, item.price, item.quantity)

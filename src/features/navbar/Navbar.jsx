@@ -5,7 +5,6 @@ import { toggleCartOpen } from "./navbarSlice";
 import { getTotalInStore } from "../total/getTotal";
 
 export function Navbar() {
-  getTotalInStore;
   const dispatch = useDispatch();
   const handleToggleCart = () => {
     dispatch(toggleCartOpen());

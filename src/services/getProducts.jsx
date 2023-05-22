@@ -1,4 +1,4 @@
-export function Products() {
+export function getProducts() {
   return fetch(
     `https://shopisko-98e58-default-rtdb.firebaseio.com/products.json`,
     {
