@@ -53,7 +53,10 @@ export const Cart = () => {
       <h3 className="cart-text">Your Cart:</h3>
       <div className="cart-list">{renderedCartItemList}</div>
       <Total />
-      <button onClick={() => checkoutModal.showModal()}>
+      <button
+        disabled={renderedCartItemList.length === 0}
+        onClick={() => checkoutModal.showModal()}
+      >
         Proceed to Checkout
       </button>
       <dialog className="cart-modal" id="checkoutModal">
