@@ -51,6 +51,11 @@ button:focus-visible {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 600px) {
+  .itemList-print__area {
+    justify-content: center;
+  }
+}
 
 .itemList-item {
   padding: 1rem;
