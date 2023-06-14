@@ -27,7 +27,8 @@ export function getProducts() {
         brand: product[1].brand,
         price: product[1].price,
         quantity: product[1].quantity,
-        image: product[1].image,
+        imageMedium: product[1].imageMedium,
+        imageSmall: product[1].imageSmall,
       }));
       return productsArray;
     });

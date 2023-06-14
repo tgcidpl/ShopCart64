@@ -22,7 +22,11 @@ export function Navbar() {
               {totalQuantityInCart}
             </span>
           ) : null}
-          <img src={cartIcon} className="navbar-cartButton__icon" />
+          <img
+            src={cartIcon}
+            className="navbar-cartButton__icon"
+            alt="cart-icon"
+          />
         </button>
       </nav>
     </div>

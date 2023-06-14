@@ -31,8 +31,10 @@ export const ProductsList = () => {
         <article className="itemList-item" key={item.id}>
           <img
             className="itemList-item__image"
-            src={item.image}
+            src={item.imageMedium}
             alt="item-photo"
+            srcSet={`${item.imageSmall} 600w,
+            ${item.imageMedium} 1000w`}
           />
           <h4>Product name: {item.name}</h4>
           <h4>Brand: {item.brand}</h4>
